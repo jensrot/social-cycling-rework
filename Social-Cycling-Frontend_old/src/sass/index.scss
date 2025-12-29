@@ -1,0 +1,386 @@
+@import './animations/keyframes.scss';
+@import './colors/variables.scss';
+@import './fonts/main.scss';
+@import './mixins/breakpoints.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hind", sans-serif;
+  background-color: $white;
+  color: $black;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease-in-out;
+}
+
+a {
+  color: $link-one;
+}
+
+input, 
+textarea, 
+button, 
+select {
+  outline: none;
+}
+
+// Style buttons correct in safari browser
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  // opacity: 1
+}
+
+// Remove blue color when clicking on mobile 
+input,
+textarea,
+// button,
+i,
+a,
+img,
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Keep footer always at the bottom
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
+}
+
+.post {
+  &__bottom-container {
+    p {
+      color: $black;
+      // font-weight: bold;
+
+      i {
+        color: $link-one;
+      }
+    }
+  }
+}
+
+// TODO: react-tooltip remove arrow bottom
+.tooltip {
+  &::before {
+    border-bottom: 0 !important;
+  }
+}
+
+/*** Toast ***/
+.Toastify__toast--success,
+.Toastify__toast--error {
+  background-color: $white;
+  border-radius: 0.3rem;
+  color: $black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+
+  @include md {
+    width: 80%;
+  }
+
+}
+
+.Toastify__close-button {
+  color: $black;
+  transition: color 100ms ease-in-out;
+
+  &:hover {
+    color: $black-one;
+  }
+}
+
+.Toastify__progress-bar {
+  background-color: $orange;
+}
+
+.Toastify__toast-container--top-right {
+  top: 11%;
+  right: 15%; 
+
+  @include md {
+    left: 10%;
+  }
+}
+
+/*** Dark theme ***/
+  .darkTheme {
+    body {
+      background-color: $bg-color-dark;
+      color: $body-color-dark;
+      .header {
+        background-color: $color1-dark;
+
+        &__logo {
+          color: $body-color-dark;
+        }
+
+        &__hamburger {
+          color: $body-color-dark;
+        }
+
+        nav {
+          ul {
+            li {
+              a {
+                color: $body-color-dark;
+              }
+            }
+          }
+        }
+      }
+
+      .mobile-header {
+        &__mobile-container {
+          background-color: $color1-dark;
+          border-bottom: $border-dark;
+
+          li {
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
+      
+      .landing {
+        &__section-4 {
+          background-color: $color1-dark; 
+        }
+
+        &__section-3 {
+          background-color: $color1-dark; 
+          .landing-latest {
+            #latest-title {
+              color: $body-color-dark;
+            }
+          }
+        }
+
+        &__section-4 {
+          .landing-what {
+            .landing-container {
+              .landing-text {
+                span {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .errors {
+        background-color: $color1-dark;
+        border: $border-dark;
+
+        &__error {
+          color: $body-color-dark;
+        }
+      }
+
+      .dashboard,
+      .profile,
+      .profile-detail,
+      .post-detail,
+      .comment,
+      .comment-form,
+      .upload-image,
+      .create-post,
+      .edit-post
+      {
+        &__card {
+          background-color: $color1-dark;
+          border: $border-dark;
+        }
+      }
+      .top-bar {
+        &__right {
+          .filter-title-container {
+            background-color: $color1-dark;
+            border: $border-dark;
+          }
+
+          .filter-container {
+            background-color: $color1-dark;
+            border: $border-dark;
+          }
+        }
+      }
+
+      .share-container {
+        .share-button {
+          background-color: $color1-dark;
+          color: $white;
+
+          &:hover {
+            color: $color1-dark;
+          }
+        }
+      }
+
+      .posts-list,
+      .landing-posts,
+      .profile-posts {
+        &__container {
+          .post {
+            background-color: $color1-dark;
+            border: $border-dark;
+
+            &__text {
+              color: $white;
+            }
+
+            h1 {
+              color: $body-color-dark;
+            }
+
+            // p {
+            //   color: $link;
+            // }
+
+            time {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .comment,
+      .post-detail,
+      .dashboard, 
+      .comment-form,
+      .edit-profile,
+      .create-post {
+        &__modal {
+          background-color: $color1-dark;
+          border: $border-dark;
+          color: $white;
+
+          .buttons-container {
+            .cancel-button {
+              background-color: $color1-dark;
+              color: $white;
+
+              &:hover {
+                color: $color1-dark;
+              }
+            }
+          }
+        }
+      }
+
+      .post-detail {
+        &__attendees-modal {
+          background-color: $color1-dark;
+          border: $border-dark;
+          color: $white;
+
+          .top-container {
+            .close-button {
+                color: $white;
+            }
+          }
+          
+          .attendees-container {
+            &::-webkit-scrollbar-track {
+              border-radius: 1rem;
+              background-color: $scrollbar-track-dark;
+            }
+      
+            &::-webkit-scrollbar-thumb {
+              cursor: pointer;
+              background-color: $scrollbar-thumb-dark;
+              border-radius: 1rem;
+
+              &:hover {
+                background-color: $scrollbar-thumb-hover-dark;
+              }
+            }
+          }
+        }
+      }
+
+      .scroll-top {
+        button {
+          background-color: $color1-dark;
+          border: $border-dark;
+          i {
+            color: $white;
+          }
+        }
+      }
+
+      .search-bar-container {
+        input {
+          background-color: $color1-dark;
+          border: $border-dark !important;
+          color: $body-color-dark;
+        }
+
+        .search-button,
+        .clear-button {
+          color: $body-color-dark;
+        }
+
+      }
+
+      .footer {
+        background-color: $bg-color-dark;
+        border-top: $border-dark;
+      }
+
+      .create-profile,
+      .edit-profile,
+      .edit-user,
+      .create-post,
+      .edit-post,
+      .request,
+      .reset {
+        &__card {
+          background-color: $color1-dark;
+          border: $border-dark;
+        }
+
+        &__main-title {
+          color: $body-color-dark;
+        }
+      }
+    }
+
+    .Toastify__toast--success,
+    .Toastify__toast--error {
+      background-color: $color1-dark;
+      color: $body-color-dark;
+    }
+
+    .Toastify__close-button {
+      color: $white;
+      transition: color 100ms ease-in-out;
+    
+      &:hover {
+        color: $body-color-dark;
+      }
+    }
+
+    .post {
+      &__bottom-container {
+        p {
+          color: $link;
+    
+          i {
+            color: $link;
+          }
+        }
+      }
+    }
+  }

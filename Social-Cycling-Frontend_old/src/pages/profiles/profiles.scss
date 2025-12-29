@@ -1,0 +1,43 @@
+@import '../../sass/colors/variables.scss';
+@import '../../sass/mixins/breakpoints.scss';
+
+.profiles {
+    animation: fade 500ms ease-in-out;
+    // height: 100vh;
+    margin: 0 18%;
+
+    @include md {
+        height: initial;
+    }
+
+    &__back-button-container {
+        margin: 5% 0;
+        .back-button {
+            padding: 0.7rem 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+            border: none;
+            border-radius: 0.5rem;
+            color: $white;
+            background-color: $orange;
+            font-weight: bold;
+            transition: all 300ms ease-in-out;
+
+            @include md {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            &:hover {
+                transform: scale(1.035);
+            }
+        }
+    }
+
+    &__loading-container {
+        height: 100vh; 
+        display: flex; 
+        justify-content: center; 
+        margin-top: 10%;
+    }
+}

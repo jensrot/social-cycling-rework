@@ -1,0 +1,30 @@
+.flex-spacer {
+    flex: 1 1 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+
+    a {
+        font-size: 2rem;
+        margin-left: 1rem;
+        margin-top: 0.2rem;
+        transition: text-decoration-color 300ms ease-in-out;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: orange;
+        }
+    }
+
+    span {
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size: 1rem;
+        color: #505050;
+        margin-left: 2%;
+        margin-top: 6%;
+        cursor: default;
+    }
+}

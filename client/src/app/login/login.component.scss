@@ -1,0 +1,33 @@
+.full-screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+
+    .card {
+        width: 90%;
+        padding: 1rem;
+        max-width: 500px;
+        margin-bottom: 1rem;
+
+        mat-form-field,
+        button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        mat-card-content {
+            text-align: center;
+
+            p {
+                a {
+                    text-decoration: none;
+                    color: orange;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

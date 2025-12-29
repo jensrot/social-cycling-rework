@@ -1,0 +1,265 @@
+@import '../../sass/colors/variables.scss';
+@import '../../sass/mixins/breakpoints.scss';
+
+.landing {
+    &__section-1 {
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        .landing-intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include md {
+                flex-wrap: wrap;
+                margin-top: 5%;
+            }
+            div {
+                &:nth-child(1) {
+                    margin-right: 10%;
+                    @include md {
+                        margin: initial;  
+                    }
+                    p {
+                        font-size: 4rem;
+                        margin-right: 2rem;
+                        margin-bottom: 3rem;
+                        line-height: 1;
+                        transition: opacity 500ms ease-in-out;
+                        animation: fade-in 500ms ease-in-out;
+
+                        @include md {
+                            text-align: center;
+                            font-size: 3rem;
+                            margin-right: initial;
+                            line-height: 1.2;
+                            margin-bottom: 1.7rem;
+                        }
+                    }
+
+                    a {
+                        margin-left: 8%;
+                        padding: 0.3rem 3.5rem;
+                        cursor: pointer;
+                        line-height: 1;
+                        border: none;
+                        border-radius: 0.5rem;
+                        color: $white;
+                        background-color: $orange;
+                        font-weight: bold;
+                        text-decoration: none;
+                        transition: opacity 500ms ease-in-out;
+                        animation: fade-in 500ms ease-in-out;
+
+                        @include md {
+                            margin-left: 4%;
+                        }
+                    }
+                }
+                
+
+                &:nth-child(2) {
+                    @include md {
+                        display: flex;
+                        justify-content: center;
+                    }
+                img {
+                    width: 450px;
+                    cursor: pointer;
+                    transition: opacity 500ms ease-in-out;
+                    animation: fade-in 500ms ease-in-out;
+                    
+                    @include md {
+                            width: 80%;
+                            height: auto;
+                            
+                        }
+
+                        &:hover {
+                            transform: scale(1.01);
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+
+
+    &__section-2 {
+        padding: 5% 17% 5% 17%;
+        .landing-title {
+            text-align: left;
+            margin-bottom: 5%;
+            font-size: 1.875em;
+            font-weight: 400;
+            padding: 0;
+            @include md {
+                text-align: center;
+                font-size: 1.6rem;
+            }
+        }
+        .landing-features {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            @include md {
+                justify-content: center;
+            }
+            div {
+                img {
+                    width: 150px;
+                    height: auto;
+                    margin-bottom: 10%;
+                }
+
+                @include md {
+                    margin: 1.5rem 0;
+                }
+
+                &:nth-child(2) {
+                    img {
+                        margin-left: 12%;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    &__section-3 {
+        padding: 5% 17% 5% 17%;
+        background-color: #fafafa;
+        .landing-latest {
+            .landing-title {
+                text-align: left;
+                margin-bottom: 5%;
+                font-size: 1.875em;
+                font-weight: 400;
+                padding: 0;
+                text-decoration: none;
+                color: #fff;
+                @include md {
+                    text-align: center;
+                    font-size: 1.6rem;
+                }
+            }
+
+            #latest-title {
+                color: $black;
+                @include md {
+                    font-size: 1.6rem;
+                }
+            }
+
+            .landing-grouprides {
+                white-space: nowrap;
+                position: relative;
+                height: 100%;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+
+    &__section-4 {
+        padding: 5% 20% 5% 17%;
+        background-color: #fafafa;
+        .landing-what {
+            .landing-title {
+                text-align: left;
+                margin-bottom: 3%;
+                font-size: 1.875em;
+                font-weight: 400;
+                padding: 0;
+                text-decoration: none;
+                @include md {
+                    text-align: center;
+                    font-size: 1.6rem;
+                }
+            }
+
+            .landing-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: -5%;
+
+                @include md {
+                    flex-wrap: wrap;
+                }
+
+                .landing-text {
+                    width: 34%;
+                    margin-top: 5%;
+
+                    @include xl {
+                        width: initial;
+                    }
+                    
+                    p {
+                        width: 362px;
+
+                        @include md {
+                            width: initial;
+                            text-align: center;
+                        }
+
+                        line-height: 1.8;
+                        &:nth-child(1) {
+                            margin-bottom: 2%;
+                        }
+                        &:nth-child(2) {
+                            margin-bottom: 12%;
+                        }
+                        span {
+                            font-weight: bold;
+                            color: #555555;
+                        }
+                    }
+
+                    a {
+                        padding: 0.4rem 3.5rem;
+                        cursor: pointer;
+                        line-height: 1;
+                        border: none;
+                        border-radius: 0.5rem;
+                        color: $white;
+                        background-color: $orange;
+                        font-weight: bold;
+                        text-decoration: none;
+                        transition: all 300ms ease-in-out;
+
+                        @include md {
+                            padding: 0.8rem 3.5rem;
+                        }
+                        
+                    }
+
+                    .landing-button-container {
+                        @include md {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }   
+
+                .landing-image {
+                    margin: 0 2% 0% 2%;
+                    @include md {
+                        margin-top: 10%;
+                    }
+                    img {
+                        width: 403px;
+                        height: 100%;
+                        @include md {
+                            width: 100%;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}

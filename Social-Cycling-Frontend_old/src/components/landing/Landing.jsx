@@ -1,0 +1,109 @@
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import community from "../../assets/community.svg";
+import bike from "../../assets/bike.svg";
+import nature from "../../assets/nature.svg";
+import environment from "../../assets/environment.svg";
+import prefer from "../../assets/prefer.svg";
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getLatestPosts } from '../../redux/actions/postActions';
+
+import { smoothScroll } from '../../utils';
+
+import LandingPosts from './LandingPosts';
+import ReactTooltip from 'react-tooltip';
+
+import './landing.scss';
+
+const Landing = () => {
+
+    const latestPosts = useSelector(state => state.post.latestPosts);
+
+    const randomNumber = Math.floor(Math.random() * (20 - 10)) + 10;
+    const lessPosts = latestPosts.slice(0, randomNumber);
+
+    const dispatch = useDispatch();
+
+    /** Smooth scroll to landing section.
+     *  @returns {Function} smoothScroll
+     */
+    const scrollToSection = () => {
+        return smoothScroll('.landing__section-4')
+    }
+
+    useEffect(() => {
+        dispatch(getLatestPosts());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    return (
+        <div className="landing">
+            <section className="landing__section-1">
+                <div className="landing-intro">
+                    <div>
+                        <p>
+                            Social <br />
+                            Cycling
+                        </p>
+                        <Link to="/register">Join</Link>
+                    </div>
+                    <div>
+                        <img data-tip="Click!" onClick={scrollToSection} src={bike} alt="bike-logo" />
+                        <ReactTooltip className="tooltip" />
+                    </div>
+                </div>
+            </section>
+
+            <section className="landing__section-4">
+                <div className="landing-what">
+                    <div className="landing-title">Ride in a group</div>
+                    <div className="landing-container">
+                        <div className="landing-text">
+                            <p><span>Social Cycling</span> is a platform where cyclists of all levels can come together and organise group rides.</p>
+                            <p>Cycling is fun, and it is more fun with friends!</p>
+                            <div className="landing-button-container">
+                                <Link to="/register">Join</Link>
+                            </div>
+                        </div>
+                        <div className="landing-image">
+                            <img src={nature} alt="nature-img" />
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="landing__section-2">
+                <h1 className="landing-title">Why SocialCycling</h1>
+                <div className="landing-features">
+                    <div>
+                        <img src={environment} alt="logo" />
+                        <h1>Good for planet!</h1>
+                    </div>
+                    <div>
+                        <img src={community} alt="logo" />
+                        <h1>Meet new people!</h1>
+                    </div>
+                    <div>
+                        <img src={prefer} alt="logo" />
+                        <h1>Like group rides!</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section className="landing__section-3">
+                <div className="landing-latest">
+                    <Link className="landing-title" id="latest-title" to="/posts">Latest Group Rides</Link>
+                    <div className="landing-grouprides">
+                        <LandingPosts posts={lessPosts} />
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    )
+}
+
+export default Landing;

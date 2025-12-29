@@ -1,0 +1,35 @@
+@import '../../sass/mixins/breakpoints.scss';
+
+.posts-list {
+    @include md {
+        display: flex;
+        justify-content: center;
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        flex-wrap: wrap;
+        margin-bottom: 10%;
+
+        @include md {
+            display: flex;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.no-posts-found,
+.no-posts-created {
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10%;
+
+    p {
+        font-weight: bold;
+
+        @include md {
+            text-align: center;
+        }
+    }
+}

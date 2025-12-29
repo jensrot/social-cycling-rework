@@ -1,0 +1,30 @@
+.time-picker {
+    &__container {
+      .rc-time-picker {
+        width: 100%;
+        position: relative;
+
+        input {
+          cursor: pointer;
+          width: 100%;
+          border: 0.0625em solid #e5e5e5;
+          background-color: #f6f6f6;
+          border-radius: 0.5rem;
+          color: #555555;
+          padding: 17px 10px;
+          font-size: 0.8rem;
+        }
+
+        i {
+          color: #555555;
+          position: absolute;
+          top: 28%;
+          right: 3%;
+        }
+      }
+
+      .rc-time-picker-panel {
+        top: 602.5;
+      }
+    }
+  }

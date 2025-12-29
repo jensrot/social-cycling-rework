@@ -1,0 +1,27 @@
+@import '../../../sass/colors/variables.scss';
+@import '../../../sass/mixins/breakpoints.scss';
+
+.profile-posts {
+    &__container {
+        display: flex;
+        // justify-content: space-between;
+
+        &::-webkit-scrollbar {
+            height: 7px;
+          }
+      
+        &::-webkit-scrollbar-track {
+            background-color: $body-color-dark;
+
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            cursor: pointer;
+            background-color: #555555;
+        }
+
+        @include md {
+            grid-template-columns: 1fr;
+        }
+    }
+}

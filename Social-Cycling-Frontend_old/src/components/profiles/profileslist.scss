@@ -1,0 +1,18 @@
+@import '../../sass/mixins/breakpoints.scss';
+
+.profiles-list {
+    @include md {
+        display: flex;
+        justify-content: center;
+    }
+    &__container {
+        margin-bottom: 10%;
+    }
+
+    &__no-profiles-created {
+        height: 100vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
